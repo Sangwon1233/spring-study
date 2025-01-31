@@ -5,17 +5,17 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import com.sangwon97.firstspring.domain.Member;
 
+
 public class MemoryMemberRepositoryTest {
     
     MemoryMemberRepository repository = new MemoryMemberRepository();
     
-    @AfterEach
+    @AfterEach //테스트 메소드가 끝날때마다 깔끔하게 지워주는거
     public void afterEach(){
         repository.clearStore();
 
@@ -39,7 +39,7 @@ public class MemoryMemberRepositoryTest {
         repository.save(member1);
 
         Member member2 = new Member();
-        member1.setName("spring2");
+        member2.setName("spring2");
         repository.save(member2);
 
         Member result = repository.findByName("spring1").get();
