@@ -3,14 +3,20 @@ package com.sangwon97.firstspring.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import com.sangwon97.firstspring.domain.Member;
 import com.sangwon97.firstspring.repository.MemberRepository;
-import com.sangwon97.firstspring.repository.MemoryMemberRepository;
 
+@Service
+@Component
 public class MemberService {
 
     private final MemberRepository memberRepository;
     
+    @Autowired
     public MemberService(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
 
